@@ -12,15 +12,15 @@ $(function () {
         }
     )
 
-    $('#fullpage').fullpage({
-        autoScrolling:true,
-        scrollHorizontally: true,
-        sectionSelector: '.page-section',
-    });
+    // $('#fullpage').fullpage({
+    //     autoScrolling:true,
+    //     scrollHorizontally: true,
+    //     sectionSelector: '.page-section',
+    // });
 
     //adding the action to the button
-    $(document).on('click', '.scroll__btn', function(){
-        fullpage_api.moveSectionDown();
-    });
+    // $(document).on('click', '.scroll__btn', function(){
+    //     fullpage_api.moveSectionDown();
+    // });
 
 });
