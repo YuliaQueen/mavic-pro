@@ -13,7 +13,7 @@ $(function () {
     )
 
     $('#fullpage').fullpage({
-        autoScrolling:true,
+        autoScrolling: true,
         scrollHorizontally: true,
         navigation: true,
         sectionSelector: '.page-section',
@@ -21,8 +21,15 @@ $(function () {
     });
 
     //adding the action to the button
-    $(document).on('click', '.scroll__btn', function(){
+    $(document).on('click', '.scroll__btn', function () {
         fullpage_api.moveSectionDown();
     });
 
 });
+
+
+window.addEventListener('scroll', () => {
+    let header = document.querySelector('.header');
+
+    header.style.background = window.scrollY > 50 ? 'rgba(0, 0, 0, .8)' : 'transparent';
+})
