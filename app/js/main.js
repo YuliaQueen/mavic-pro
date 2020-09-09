@@ -17,6 +17,7 @@ $(function () {
         scrollHorizontally: true,
         navigation: true,
         sectionSelector: '.page-section',
+        responsiveWidth: 1200,
     });
 
     //adding the action to the button
