@@ -18,6 +18,13 @@ $(function () {
         navigation: true,
         sectionSelector: '.page-section',
         responsiveWidth: 1200,
+        onLeave: function(origin, destination){
+            if (destination.index > 0 && $(window).width() > 1200) {
+                $(".header__phone").css('display', 'block');
+            } else {
+                $(".header__phone").css('display', 'none')
+            }
+        }
     });
 
     //adding the action to the button
@@ -27,7 +34,7 @@ $(function () {
 
 });
 
-
+//fixed menu
 window.addEventListener('scroll', () => {
     let header = document.querySelector('.header');
 
