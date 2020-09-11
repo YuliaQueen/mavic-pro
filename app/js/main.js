@@ -33,3 +33,40 @@ window.addEventListener('scroll', () => {
 
     header.style.background = window.scrollY > 50 ? 'rgba(0, 0, 0, .8)' : 'transparent';
 })
+
+//MOBILE MENU
+let button = document.querySelector('.header__hamburger');
+let menu = document.querySelector('.mobile__menu');
+let body = document.querySelector('body');
+let overlay = document.querySelector('.overlay_menu');
+let links = document.querySelectorAll('.mobile__menu-link');
+
+button.addEventListener('click', () => {
+    button.classList.toggle('cross');
+    menu.classList.toggle('active');
+    body.classList.toggle('noscroll');
+    overlay.classList.toggle('visible');
+});
+
+links.forEach(function (link) {
+    link.addEventListener('click', function () {
+        menu.classList.toggle('active');
+        button.classList.toggle('cross');
+        body.classList.toggle('noscroll');
+        overlay.classList.toggle('visible');
+    })
+})
+
+overlay.addEventListener('click', function () {
+    this.classList.remove('visible');
+    menu.classList.remove('active');
+    body.classList.remove('noscroll');
+    button.classList.remove('cross');
+});
+
+window.addEventListener('resize', function () {
+    menu.classList.remove('active');
+    body.classList.remove('noscroll');
+    button.classList.remove('cross');
+    overlay.classList.remove('visible');
+});
